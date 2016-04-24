@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>MY</title>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <link href='https://fonts.googleapis.com/css?family=Courgette|Arimo|Francois+One|Lora|Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+
+  </head>
+
+<body id="page-top" data-spy="scroll" data-target=".wrapper">
+
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li><img id="close" src="https://s3.amazonaws.com/matthewgyang/images/x.svg" alt="close-menu"/></li>
+        <li class="sidebar-brand">
+          <h1><a class="page-scroll" href="#page-top">MY</a></h1>
+        </li>
+        <li>
+          <a class="page-scroll" href="#about">About</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#blog">Blog</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <nav class="navbar navbar-fixed-top">
+        <div class="container"><a id="menu-toggle"><button id="hamburger" class="btn"><span class="glyphicon glyphicon-menu-hamburger"></span></button></a></div>
+      </nav>
+      <div class="header-container">
+        <video poster="https://s3.amazonaws.com/matthewgyang/images/poster.jpg" autoplay loop>
+          <source src="https://s3.amazonaws.com/matthewgyang/videos/header_background_2_opt.mp4" type="video/mp4">
+          <source src="https://s3.amazonaws.com/matthewgyang/videos/header_background_2_opt.webm" type="video/webm">
+        </video>
+        <div class="text text-center">
+          <div id="title">
+            <h1 class="header">Hi, my name is Matt.</h1>
+            <h1 id="sub-header">~</h1>
+            <h1 class="header-2">I'm a <span class="typed"></span></h1>
+          </div>
+        </div>
+      </div>
+      <div id="about" class="section">
+        <div class="container about-content text-center">
+          <h1>What's this all about?</h1>
+          <hr class="style1"/>
+          <div class="col-md-4">
+            <p><span class="large-letter">T</span>hanks for stopping by!</p>
+            <p>My name is Matt and I'm an aspiring web developer making a career change after 10 years in law enforcement. I started out specializing in Ruby on Rails, however I'm also diving into front end frameworks (JavaScript FTW!) and design and loving it!</p>
+          </div>
+          <div class="col-md-4">
+            <img id="fam" src="https://s3.amazonaws.com/matthewgyang/images/fam.jpg" alt="family"/>
+          </div>
+          <div class="col-md-4">
+            <p id="about-right">With the support of my family I've been working during lunch breaks, late nights and weekends to make this new career a reality and I can't wait to put a full-time effort into coding! I'm currently looking for opportunities and advice, feel free to hit me up for any reason! <a href="mailto:matt@matthewgyang.com" target="_blank">matt@matthewgyang.com</a></p>
+          </div>
+        </div>
+      </div>
+      <div id="blog" class="section">
+        <div class="container text-center">
+          <h1>Blog</h1>
+          <hr class="style2" />
+          <div id="blog-carousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <div class="image-container">
+                  <img class="img-responsive" src="http://fillmurray.com/500/500" alt="...">
+                </div>
+                <div class="carousel-caption">
+                  <h1>Blog Post 1</h1>
+                  <p>This is the sub-text</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="image-container">
+                  <img class="img-responsive" src="http://fillmurray.com/500/500" alt="...">
+                </div>
+                <div class="carousel-caption">
+                  <h1>Blog Post 2</h1>
+                  <p>This is the sub-text</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="image-container">
+                  <img class="img-responsive" src="http://fillmurray.com/500/500" alt="...">
+                </div>
+                <div class="carousel-caption">
+                  <h1>Blog Post 3</h1>
+                  <p>This is the sub-text</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#blog-carousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#blog-carousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div id="contact" class="section">
+        <div class="container text-center">
+          <h1 id="contact-header">Get in touch!</h1>
+          <hr class="style3" />
+          <div class="col-xs-12">
+            <div class="col-xs-4">
+              <a href="mailto:matt@matthewgyang.com" target="_blank">
+                <img class="contact-icon" src="https://s3.amazonaws.com/matthewgyang/images/mail.svg" alt="matt@matthewgyang.com"/>
+              </a>
+            </div>
+            <div class="col-xs-4">
+              <a href="https://github.com/yang70" target="_blank">
+                <img class="contact-icon" src="https://s3.amazonaws.com/matthewgyang/images/github.svg" alt="GitHub"/>
+              </a>
+            </div>
+            <div class="col-xs-4">
+              <a href="https://linkedin.com/in/matthewgyang" target="_blank">
+                <img class="contact-icon" src="https://s3.amazonaws.com/matthewgyang/images/linkedin.svg" alt="LinkedIn"/>
+              </a>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="col-xs-4 col-xs-offset-1 text-right">
+              <a href="https://twitter.com/yang70" target="_blank">
+                <img class="contact-icon" src="https://s3.amazonaws.com/matthewgyang/images/twitter.svg" alt="Twitter - @yang70" />
+              </a>
+            </div>
+            <div class="col-xs-4 col-xs-offset-2 text-left">
+              <a href="http://codepen.io/YangUW" target="_blank">
+                <img class="contact-icon" src="https://s3.amazonaws.com/matthewgyang/images/codepen.svg" alt="Code Pen" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <p class="text-right"><a href="http://goodstuffnononsense.com" target="_blank">Icons</a></p>
+      </div>
+
+      <footer class="footer-distributed">
+        <div class="footer-left text-center">
+          <h1><span>MY</span></h1>
+
+          <p class="footer-links">
+            <a class="page-scroll" href="#page-top">Home</a>
+            ·
+            <a class="page-scroll" href="#about">About</a>
+            .
+            <a class="page-scroll" href="#blog">Blog</a>
+            ·
+            <a class="page-scroll" href="#contact">Contact</a>
+          </p>
+
+          <p class="footer-company-name">Matthew Yang &copy; 2016</p>
+
+          <div class="footer-icons">
+
+            <a href="https://twitter.com/yang70" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a href="https://linkedin.com/in/matthewgyang" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <a href="https://github.com/yang70" target="_blank"><i class="fa fa-github"></i></a>
+            <a href="mailto:matt@matthewgyang.com" target="_blank"><i class="fa fa-envelope"></i></a>
+
+          </div>
+
+        </div>
+
+        <div class="footer-right">
+          <div id='twitter-container'>
+            <a class="twitter-timeline" href="https://twitter.com/yang70" data-widget-id="676454508264755200">Tweets by @yang70</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          </div>
+        </div>
+
+      </footer>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+</body>
+
+</html>
