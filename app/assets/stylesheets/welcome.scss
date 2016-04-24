@@ -110,20 +110,16 @@ h3 {
   }
 
   #contact {
-    height: 450px;
+    height: 480px;
   }
 
   #contact p {
     margin-top: 30px;
-    margin-bottom: 0;
+    margin-bottom: 10;
   }
 
   #contact div div {
     margin-top: 20px;
-  }
-
-  .contact-icon {
-    width: 100px;
   }
 }
 
@@ -131,15 +127,21 @@ h3 {
   #contact div div {
     margin-top: 15px;
   }
+}
 
+@media screen and (min-width: 416px) {
   .contact-icon {
-    width: 150px;
+    width: 125px;
   }
 }
 
 @media screen and (max-width: 415px) {
   #about {
     height: 995px;
+  }
+
+  .contact-icon {
+    width: 75px;
   }
 }
 
