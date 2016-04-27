@@ -1,1 +1,30 @@
-<h1>Posts Index</h1>
+<body>
+
+  <%= render 'layouts/nav' %>
+
+  <section class="container post-index-body text-center">
+    <h2>Past Blog Entries</h2>
+    <hr />
+
+    <% @posts.each do |post| %>
+      <a href="/posts/<%= post.id %>">
+        <div class="post-index-container col-md-12 text-center">
+          <div class="col-md-3 col-md-offset-2">
+            <img src="<%= post.pic_url %>" />
+          </div>
+          <div class="col-md-5">
+            <h4><%= post.title %></h4>
+            <p><i><%= post.created_at.strftime("Published %m-%d-%Y") %></i></p>
+          </div>
+        </div>
+      </a>
+      <div class="col-md-12">
+        <hr />
+      </div>
+    <% end %>
+    
+  </section>
+
+  <%= render "layouts/footer" %>
+
+</body>

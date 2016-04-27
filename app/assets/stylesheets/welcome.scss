@@ -1,6 +1,5 @@
 // Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
 video::-webkit-media-controls {
   display:none !important;
 }
@@ -24,8 +23,8 @@ nav .container {
   transform: scale(1.25);
 }
 
-.glyphicon-menu-hamburger {
-  color: #C5B358;
+#hamburger:focus {
+  outline-width: 0;
 }
 
 #hamburger:hover {
@@ -35,6 +34,14 @@ nav .container {
 
 #hamburger:hover .glyphicon-menu-hamburger {
   color: black;
+}
+
+.glyphicon-menu-hamburger {
+  color: #C5B358;
+}
+
+.glyphicon-menu-hamburger:focus {
+  outline-width: 0;
 }
 
 video {
@@ -62,6 +69,16 @@ h3 {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.down-chevron, .down-chevron:visited {
+  margin-top: 40px;
+  color: rgba(197,179,88,0.3);
+}
+
+.down-chevron:hover {
+  margin-top: 40px;
+  color: rgba(197,179,88,1);
 }
 
 #title {
@@ -158,6 +175,37 @@ h3 {
   height: 700px;
   color: white;
   background-color: #2c343f;
+}
+
+.read-button {
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  background-color: #C5B358;
+  color: black;
+  border-width: 0;
+  font-size: 17px;
+}
+
+.btn-primary:hover, .btn-primary:active {
+  background-color: black;
+  color: #C5B358;
+}
+
+.blog-section-footer {
+  color: grey;
+  font-size: 20px;
+}
+
+.blog-section-footer:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.post-link-header {
+  text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #contact {
@@ -297,4 +345,5 @@ hr.style3 {
 
 .image-container img {
   margin: 0 auto;
+  width: 275px;
 }
