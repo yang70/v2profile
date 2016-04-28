@@ -15,6 +15,7 @@ gem 'coderay'
 gem 'jquery-turbolinks'
 gem 'rails_admin'
 gem 'devise'
+gem 'pry-rails'
 
 group :development, :test do
   gem 'byebug'
@@ -26,7 +27,6 @@ end
 group :development do
   gem 'spring'
   gem 'web-console', '~> 2.0'
-  gem 'pry-rails'
 end
 
 group :test do
