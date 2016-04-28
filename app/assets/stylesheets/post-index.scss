@@ -1,0 +1,24 @@
+.post-index-body {
+  min-height: 80vh;
+  h2 {
+    font-family: "Francois One";
+  }
+  a {
+    color: black;
+  }
+  hr {
+    width: 75%;
+  }
+}
+
+.post-index-container div h4 {
+  margin-top: 10px;
+}
+
+.post-index-container div img {
+  width: 100px;
+  border-radius: 20%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 5px 0;
+}
+

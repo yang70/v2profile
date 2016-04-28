@@ -1,0 +1,40 @@
+.navbar-default {
+  background-color: #2D2D2D;
+  border-color: #2D2D2D;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0;
+  }
+}
+
+.navbar-default .navbar-brand {
+  font-family: "Courgette";
+  color: #c5b358;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #999;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #999;
+}
+
+.navbar-default .navbar-nav > li > a:hover,  {
+  color: #c5b358;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav > li > a:focus {
+  color: #999;
+  background-color: transparent;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #c5b358;
+    background-color: transparent;
+  }
+}

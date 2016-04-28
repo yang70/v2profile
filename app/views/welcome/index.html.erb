@@ -1,23 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-  <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>MY</title>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-    <link href='https://fonts.googleapis.com/css?family=Courgette|Arimo|Francois+One|Lora|Source+Code+Pro' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
-
-  </head>
-
 <body id="page-top" data-spy="scroll" data-target=".wrapper">
 
   <div id="wrapper">
@@ -38,6 +18,21 @@
         <li>
           <a class="page-scroll" href="#contact">Contact</a>
         </li>
+        <li>
+          <hr class="sidebar-hr"/>
+        </li>
+        <li>
+          <a href="/posts">Blog Archive</a>
+        </li>
+        <li>
+          <p>Resume</p>
+          <a href="https://s3.amazonaws.com/matthewgyang/resume/Matthew+G+.Yang+-+Resume.pdf" target="_blank">
+            <i class="fa fa-chevron-right"> PDF</i>
+          </a>
+          <a href="https://s3.amazonaws.com/matthewgyang/resume/Matthew+G.+Yang+-+Resume.docx" target="_blank">
+            <i class="fa fa-chevron-right"> Doc</i>
+          </a>
+        </li>
       </ul>
     </div>
     <!-- /sidebar-wrapper -->
@@ -57,6 +52,7 @@
             <h1 class="header">Hi, my name is Matt.</h1>
             <h1 id="sub-header">~</h1>
             <h1 class="header-2">I'm a <span class="typed"></span></h1>
+            <a class="page-scroll down-chevron" href="#about"><i class="fa fa-chevron-down fa-3x"></i></a>
           </div>
         </div>
       </div>
@@ -83,41 +79,43 @@
           <div id="blog-carousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
-              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+              <% indicators = 0 %>
+              <% @posts.length.times do %>
+
+                <% if indicators == 0 %>
+                  <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                <% else %>
+                  <li data-target="#carousel" data-slide-to="<%= indicators %>"></li>
+                <% end %>
+
+                <% indicators += 1 %>
+              <% end %>
             </ol>
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
-              <div class="item active">
-                <div class="image-container">
-                  <img class="img-responsive" src="http://fillmurray.com/500/500" alt="...">
+                <div class="item active">
+                  <div class="image-container">
+                    <img class="img-responsive" src="<%= @posts[0].pic_url %>" alt="image for post <%= @posts[0].id %>">
+                  </div>
+                  <div class="carousel-caption">
+                    <h1 class="post-link-header"><%= @posts[0].title %></h1>
+                    <a class="btn btn-primary read-button" href="/posts/<%= @posts[0].id %>">Read</a>
+                  </div>
                 </div>
-                <div class="carousel-caption">
-                  <h1>Blog Post 1</h1>
-                  <p>This is the sub-text</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="image-container">
-                  <img class="img-responsive" src="http://fillmurray.com/500/500" alt="...">
-                </div>
-                <div class="carousel-caption">
-                  <h1>Blog Post 2</h1>
-                  <p>This is the sub-text</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="image-container">
-                  <img class="img-responsive" src="http://fillmurray.com/500/500" alt="...">
-                </div>
-                <div class="carousel-caption">
-                  <h1>Blog Post 3</h1>
-                  <p>This is the sub-text</p>
-                </div>
-              </div>
-            </div>
+              <% if @posts[1] %>
+                <% @posts[1..-1].each do |post| %>
+                  <div class="item">
+                    <div class="image-container">
+                      <img class="img-responsive" src="<%= post.pic_url %>" alt="image for post <%= post.id %>">
+                    </div>
+                    <div class="carousel-caption">
+                      <h1 class="post-link-header"><%= post.title %></h1>
+                      <a class="btn btn-primary read-button" href="/posts/<%= post.id %>">Read</a>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
 
             <!-- Controls -->
             <a class="left carousel-control" href="#blog-carousel" role="button" data-slide="prev">
@@ -129,8 +127,10 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
+          <a class="blog-section-footer" href="/posts">Full List of Posts</a>
         </div>
       </div>
+    </div>
       <div id="contact" class="section">
         <div class="container text-center">
           <h1 id="contact-header">Get in touch!</h1>
@@ -167,41 +167,8 @@
         </div>
       </div>
 
-      <footer class="footer-distributed">
-        <div class="footer-left text-center">
-          <h1><span>MY</span></h1>
+    <%= render "layouts/footer" %>
 
-          <p class="footer-links">
-            <a class="page-scroll" href="#page-top">Home</a>
-            ·
-            <a class="page-scroll" href="#about">About</a>
-            .
-            <a class="page-scroll" href="#blog">Blog</a>
-            ·
-            <a class="page-scroll" href="#contact">Contact</a>
-          </p>
-
-          <p class="footer-company-name">Matthew Yang &copy; 2016</p>
-
-          <div class="footer-icons">
-
-            <a href="https://twitter.com/yang70" target="_blank"><i class="fa fa-twitter"></i></a>
-            <a href="https://linkedin.com/in/matthewgyang" target="_blank"><i class="fa fa-linkedin"></i></a>
-            <a href="https://github.com/yang70" target="_blank"><i class="fa fa-github"></i></a>
-            <a href="mailto:matt@matthewgyang.com" target="_blank"><i class="fa fa-envelope"></i></a>
-
-          </div>
-
-        </div>
-
-        <div class="footer-right">
-          <div id='twitter-container'>
-            <a class="twitter-timeline" href="https://twitter.com/yang70" data-widget-id="676454508264755200">Tweets by @yang70</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-          </div>
-        </div>
-
-      </footer>
     </div>
     <!-- /#page-content-wrapper -->
 
@@ -212,4 +179,3 @@
 
 </body>
 
-</html>

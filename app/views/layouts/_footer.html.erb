@@ -1,0 +1,38 @@
+
+      <footer class="footer-distributed">
+        <div class="footer-left text-center">
+          <h1><span>MY</span></h1>
+
+          <p class="footer-links">
+            <% if request.original_fullpath == '/' %>
+              <a class="page-scroll" href="#page-top">Home</a>
+              ·
+              <a class="page-scroll" href="#about">About</a>
+              ·
+              <a class="page-scroll" href="#blog">Blog</a>
+              ·
+              <a class="page-scroll" href="#contact">Contact</a>
+            <% else %>
+              <a href="/">Home</a>
+              ·
+              <a href="/posts">Blog</a>
+            <% end %>
+          </p>
+
+          <p class="footer-company-name">Matthew Yang &copy; 2016</p>
+
+
+        </div>
+
+        <div class="footer-right text-center">
+          <div class="footer-icons">
+
+              <a href="https://twitter.com/yang70" target="_blank"><i class="fa fa-twitter"></i></a>
+              <a href="https://linkedin.com/in/matthewgyang" target="_blank"><i class="fa fa-linkedin"></i></a>
+              <a href="https://github.com/yang70" target="_blank"><i class="fa fa-github"></i></a>
+              <a href="mailto:matt@matthewgyang.com" target="_blank"><i class="fa fa-envelope"></i></a>
+
+          </div>
+        </div>
+
+      </footer>
