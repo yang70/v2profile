@@ -14,6 +14,7 @@ gem 'redcarpet'
 gem 'coderay'
 gem 'jquery-turbolinks'
 gem 'rails_admin'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug'
